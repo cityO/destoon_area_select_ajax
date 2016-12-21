@@ -1,0 +1,1 @@
+<?php/* 政府组织机构  分类联动查询   ajax*/require 'common.inc.php';$pid=$_GET['pid'];if(!isset($pid) || $pid==''){exit;}$sql="select * from destoon_gov_cat where parentid='$pid'";$param = array();$res = $db->query($sql);while($r = $db->fetch_array($res)){    $param[] = $r;}echo json_encode($param);exit;?>
